@@ -35,7 +35,6 @@ class CaloriesActivity : AppCompatActivity() {
     fun initLayout(){
         titleTextView = findViewById(R.id.nametext)
         imgView = findViewById(R.id.img)
-
         mButton1 = findViewById(R.id.button1)
         mButton2 = findViewById(R.id.button2)
         mButton3 = findViewById(R.id.button3)

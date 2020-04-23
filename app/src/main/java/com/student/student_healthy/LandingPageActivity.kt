@@ -46,6 +46,7 @@ class LandingPageActivity : Activity() {
         mTextView  = findViewById(R.id.text)
         mRelativeLayout = findViewById(R.id.layout)
         mRelativeLayout.setOnClickListener {
+            //跳到 下一頁
 
             startActivity(Intent(this, HomeActivity::class.java))
         }
