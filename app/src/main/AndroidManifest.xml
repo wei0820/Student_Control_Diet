@@ -23,7 +23,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -36,8 +35,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
-
         <activity
             android:name="com.student.student_healthy.LandingPageActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -49,12 +46,19 @@
         </activity>
         <activity
             android:name="com.student.student_healthy.HomeActivity"
-            android:label="@string/title_activity_place_deatil"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.student.student_healthy.MainActivity"
-            android:label="@string/title_activity_place_deatil"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:label="@string/food_title"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity
+            android:name="com.student.student_healthy.CaloriesActivity"
+            android:label="@string/food_cal"/>
+
+        <activity
+            android:name="com.student.student_healthy.Main2Activity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

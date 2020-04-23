@@ -5,7 +5,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_my_map">Map</string>
     <string name="title_activity_landing_page">healthy app</string>
-    <string name="title_activity_place_deatil">PlaceDeatilActivity</string>
+    <string name="title_activity_place_deatil">建議飲食</string>
     <string name="title_activity_select">SelectActivity</string>
 
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
@@ -115,4 +115,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="food_title">建議飲食</string>
+    <string name="food_cal">卡路里紀錄</string>
+
 </resources>

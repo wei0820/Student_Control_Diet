@@ -116,30 +116,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         }
-//        if(FacebookManager.checkFbState(this)){
-//            val id :String = FacebookManager.checkFbStateString(this).split(",")[0]
-//            val name :String = FacebookManager.checkFbStateString(this).split(",")[1]
-//
-//            val photo :String = FacebookManager.checkFbStateString(this).split(",")[2]
-//            setMemberData(id,name,photo)
-//            MySharedPrefernces.saveUserId(this,name)
-//            MySharedPrefernces.saveId(this,id)
-//
-//        }
-        mOrderBtn = findViewById(R.id.orderbtn)
-        mOrderBtn.setOnClickListener {
 
 
-        }
-        mFast = findViewById(R.id.fast);
-        mFast.setOnClickListener {
-
-
-        }
-        mShop = findViewById(R.id.shop)
-        mShop.setOnClickListener {
-
-        }
     }
 
     override fun onBackPressed() {
@@ -171,23 +149,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_camera -> {
             }
             R.id.nav_gallery -> {
-
-            }
-//             店家版
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
-
-//            goTOGooglemap(lat,lon,24.683258, 120.967297)
-
-            }
-            R.id.nav_share -> {
-//                setFireBase()
-
-
-            }
-            R.id.nav_send -> {
+                startActivity(Intent(this,Main2Activity::class.java))
 
             }
             R.id.nav_food ->{
