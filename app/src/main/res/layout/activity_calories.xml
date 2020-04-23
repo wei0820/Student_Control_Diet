@@ -19,6 +19,7 @@
         android:layout_height="75dp"
         >
         <Button
+            android:id="@+id/button1"
             android:text="早餐"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -26,6 +27,8 @@
 
             ></Button>
         <Button
+            android:id="@+id/button2"
+
             android:text="午餐"
 
             android:layout_weight="1"
@@ -34,6 +37,8 @@
 
             ></Button>
         <Button
+            android:id="@+id/button3"
+
             android:text="晚餐"
 
             android:layout_weight="1"
@@ -42,6 +47,8 @@
 
             ></Button>
         <Button
+            android:id="@+id/button4"
+
             android:text="點心"
 
             android:layout_weight="1"

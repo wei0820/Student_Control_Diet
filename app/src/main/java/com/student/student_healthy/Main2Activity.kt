@@ -48,6 +48,12 @@ class Main2Activity : AppCompatActivity() {
 
         //now adding the adapter to recyclerview
         recyclerView.adapter = adapter
+        getData()
+
+    }
+    fun  getData(){
+        var titleString :String = intent.extras.getString("title")
+        title  = titleString
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

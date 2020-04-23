@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_camera -> {
             }
             R.id.nav_gallery -> {
-                startActivity(Intent(this,Main2Activity::class.java))
+                startActivity(Intent(this,CaloriesActivity::class.java))
 
             }
             R.id.nav_food ->{
