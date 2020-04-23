@@ -62,7 +62,7 @@ class Main2Activity : AppCompatActivity() {
         //making the searchview consume all the toolbar when open
         searchView.maxWidth= Int.MAX_VALUE
 
-        searchView.queryHint = "Search View Hint"
+        searchView.queryHint = "搜尋"
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 

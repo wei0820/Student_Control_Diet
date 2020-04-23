@@ -36,7 +36,7 @@ class CustomAdapter(val userList: ArrayList<User>) : RecyclerView.Adapter<Custom
             textViewName.text = user.name
             textViewAge.setImageResource(user.age)
             itemView.setOnClickListener({
-                Toast.makeText(itemView.context, "His name is "+user.name, Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context, "您選擇了:"+user.name, Toast.LENGTH_SHORT).show()
             })
         }
     }

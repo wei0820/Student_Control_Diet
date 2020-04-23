@@ -57,6 +57,7 @@
             android:label="@string/food_cal"/>
 
         <activity
+            android:label="@string/food_cal"
             android:name="com.student.student_healthy.Main2Activity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
