@@ -1,29 +1,34 @@
 package com.student.student_healthy
 
-import android.app.ProgressDialog
 import android.content.Intent
-import android.graphics.BitmapFactory
-import android.location.Geocoder
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.format.DateFormat
-import android.util.Base64
-import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import com.google.gson.Gson
+import android.support.design.widget.NavigationView
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.support.v4.content.ContextCompat.startActivity
+import android.support.v4.view.GravityCompat
+import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AppCompatActivity
+
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.*
+import com.facebook.login.LoginManager
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import com.jackpan.libs.mfirebaselib.MfiebaselibsClass
 import com.jackpan.libs.mfirebaselib.MfirebaeCallback
-import com.student.student_healthy.Data.ResponseData
-import java.util.*
-import com.firebase.client.Firebase
 import com.student.student_searchmap.R
 
 
-class MainActivity : AppCompatActivity(), MfirebaeCallback {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, LocationListener,
+    MfirebaeCallback {
     override fun getUserLogoutState(p0: Boolean) {
     }
 
@@ -40,20 +45,13 @@ class MainActivity : AppCompatActivity(), MfirebaeCallback {
     }
 
     override fun getDatabaseData(p0: Any?) {
-
-
     }
 
     override fun getuserLoginEmail(p0: String?) {
     }
 
     override fun getDeleteState(p0: Boolean, p1: String?, p2: Any?) {
-        if (p0) {
-            Toast.makeText(this, "刪除成功！", Toast.LENGTH_SHORT).show();
-            mFirebselibClass.getFirebaseDatabase(ResponseData.KEY_URL, "data")
-        } else {
-            Toast.makeText(this, "刪除失敗！", Toast.LENGTH_SHORT).show();
-        }    }
+    }
 
     override fun getFireBaseDBState(p0: Boolean, p1: String?) {
     }
@@ -69,124 +67,150 @@ class MainActivity : AppCompatActivity(), MfirebaeCallback {
 
     override fun getFirebaseStorageState(p0: Boolean) {
     }
-    lateinit var img :ImageView
-    lateinit var add :TextView
-    lateinit var select:TextView
-    lateinit var phone :TextView
-    lateinit var price :TextView
-    lateinit var time :TextView
-    lateinit var message :TextView
-    lateinit var button: Button
-    lateinit var mProgressDialog : ProgressDialog
-    lateinit var mFirebselibClass: MfiebaselibsClass
-    lateinit var mLatBtn :Button
 
+    override fun onLocationChanged(p0: Location?) {
+    }
+
+    override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
+    }
+
+    override fun onProviderEnabled(p0: String?) {
+    }
+
+    override fun onProviderDisabled(p0: String?) {
+    }
+
+    lateinit var mImageView: ImageView
+    lateinit var mNameTextView: TextView
+    lateinit var mEmailTextView: TextView
+    var lat :Double = 0.0
+    var lon :Double = 0.0
+
+    lateinit var mFast :RelativeLayout
+    private var locationManager: LocationManager? = null
+    private val MY_PERMISSIONS_REQUEST_LOCATION = 1
+
+    private var mfiebaselibsClass: MfiebaselibsClass? = null
+    lateinit var mOrderBtn : RelativeLayout
+    lateinit var mShop:RelativeLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        mfiebaselibsClass = MfiebaselibsClass(this, this)
 
         setContentView(R.layout.activity_main)
-        img = findViewById(R.id.img)
-        add  =findViewById(R.id.add)
-        select = findViewById(R.id.select)
-        phone = findViewById(R.id.phone)
-        price = findViewById(R.id.price)
-        time =findViewById(R.id.time)
-        message = findViewById(R.id.message)
-        button = findViewById(R.id.button)
-        mLatBtn = findViewById(R.id.lotbtn)
+        setSupportActionBar(toolbar)
+        val toggle = ActionBarDrawerToggle(
+            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
 
+        nav_view.setNavigationItemSelectedListener(this)
+        initLayout()
+        locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
 
-//        mProgressDialog = ProgressDialog(this)
-//
-//        mProgressDialog.setMessage("loading")
-//        mProgressDialog.setCancelable(false)
-//        mProgressDialog.show()
-        getData()
-
-    }
-    fun  getData(){
-        val jsonString: String = intent.extras.getString("json")
-        val type: String = intent.extras.getString("type")
-        var lat :Double = intent.extras.getDouble("lat",0.0)
-        var lon :Double = intent.extras.getDouble("lon",0.0)
-
-        val gson =Gson()
-        val responseData = gson.fromJson(jsonString, ResponseData::class.java)
-        if (responseData.url!=null){
-            decode(responseData.url)
-
-        }
-        Log.d("Jack", ResponseData.KEY_URL+type)
-        select.text = responseData.select
-        phone.text = responseData.phone
-        price.text =responseData.price
-        time.text = "開始:"+ responseData.starttime+"~"+"結束:"+ responseData.endtime
-        message.text = responseData.message
-        handleLocation(responseData.lat.toDouble(),responseData.lon.toDouble(),add)
-
-        button.setOnClickListener {
-            Toast.makeText(this,"預約成功",Toast.LENGTH_SHORT).show()
-
-            val phone :String = responseData.phone.replaceFirst("0","+886")
-            val firebase = Firebase(ResponseData.KEY_URL+type)
-            firebase.child(responseData.date).removeValue();
-            val mCal = Calendar.getInstance()
-            val s = DateFormat.format("yyyy-MM-dd kk:mm:ss", mCal.getTime());
-            sendSMS(phone,s.toString(),responseData.id)
-        }
-
-        mLatBtn.setOnClickListener {
-            googlemap(lat,lon,responseData.lat.toDouble(),responseData.lon.toDouble())
-        }
-
-
-    }
-    fun decode(imageString: String) {
-
-        //decode base64 string to image
-        val imageBytes = Base64.decode(imageString, Base64.DEFAULT)
-        val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-
-        img.setImageBitmap(decodedImage)
-    }
-    private fun handleLocation(latitude: Double,longitude:Double,textView: TextView)  {
-        val geocoder = Geocoder(this, Locale.getDefault())
-        Thread(Runnable {
-            try {
-                var addresses = geocoder.getFromLocation(
-                        latitude, longitude, 1
-                )
-                textView.text = addresses.get(0).getAddressLine(0)
-//                mProgressDialog.dismiss()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }).start()
-    }
-
-    protected fun sendSMS(phone:String,time:String,id:String) {
-
-        val smsIntent = Intent(Intent.ACTION_VIEW)
-        smsIntent.data = Uri.parse("smsto:")
-        smsIntent.type = "vnd.android-dir/mms-sms"
-
-        smsIntent.putExtra("address", phone)
-        smsIntent.putExtra("sms_body", "親愛的客戶您好:謝謝您使用停車App於"+time+"預租停車位,如有疑義,請洽詢客服信箱 ya_1827@yahoo.com.tw")
         try {
-            startActivity(smsIntent)
-            finish()
-            Log.i("Finished sending SMS...", "")
-        } catch (ex: android.content.ActivityNotFoundException) {
-            Toast.makeText(this,
-                    "SMS faild, please try again later.", Toast.LENGTH_SHORT).show()
+            // Request location updates
+            locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
+        } catch (ex: SecurityException) {
+
+
+        }
+//        if(FacebookManager.checkFbState(this)){
+//            val id :String = FacebookManager.checkFbStateString(this).split(",")[0]
+//            val name :String = FacebookManager.checkFbStateString(this).split(",")[1]
+//
+//            val photo :String = FacebookManager.checkFbStateString(this).split(",")[2]
+//            setMemberData(id,name,photo)
+//            MySharedPrefernces.saveUserId(this,name)
+//            MySharedPrefernces.saveId(this,id)
+//
+//        }
+        mOrderBtn = findViewById(R.id.orderbtn)
+        mOrderBtn.setOnClickListener {
+
+
+        }
+        mFast = findViewById(R.id.fast);
+        mFast.setOnClickListener {
+
+
+        }
+        mShop = findViewById(R.id.shop)
+        mShop.setOnClickListener {
+
+        }
+    }
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+//
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        menuInflater.inflate(R.menu.main, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        when (item.itemId) {
+//            R.id.action_settings -> return true
+//            else -> return super.onOptionsItemSelected(item)
+//        }
+//    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_camera -> {
+            }
+            R.id.nav_gallery -> {
+
+            }
+//             店家版
+            R.id.nav_slideshow -> {
+
+            }
+            R.id.nav_manage -> {
+
+//            goTOGooglemap(lat,lon,24.683258, 120.967297)
+
+            }
+            R.id.nav_share -> {
+//                setFireBase()
+
+
+            }
+            R.id.nav_send -> {
+
+            }
+            R.id.nav_food ->{
+
+            }
         }
 
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
     }
-    fun googlemap(startLatitude :Double,startLongitude:Double,endLatitude:Double,endLongitude:Double){
+    fun initLayout(){
+        val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
+        val headerView = navigationView.getHeaderView(0)
+        mImageView = headerView.findViewById(R.id.imageView)
+        mNameTextView = headerView.findViewById(R.id.nametext)
+        mEmailTextView = headerView.findViewById(R.id.textView)
+
+    }
+
+
+    fun goTOGooglemap(startLatitude:Double,startLongitude:Double,endLatitude:Double,endLongitude:Double){
         val startLatitude = startLatitude
         val startLongitude = startLongitude
-
         val endLatitude = endLatitude
         val endLongitude = endLongitude
 
@@ -204,4 +228,36 @@ class MainActivity : AppCompatActivity(), MfirebaeCallback {
 
         startActivity(intent)
     }
+    private val locationListener: LocationListener = object : LocationListener {
+        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
+
+        }
+
+        override fun onProviderEnabled(p0: String?) {
+        }
+
+        override fun onProviderDisabled(p0: String?) {
+        }
+
+        override fun onLocationChanged(location: Location) {
+            lat = location.latitude
+            lon = location.longitude
+
+        }
+
+
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_LOCATION) {
+
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            } else {
+                Toast.makeText(this@MainActivity, "需要定位功能,才能使用喔", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+    }
+
+
 }
