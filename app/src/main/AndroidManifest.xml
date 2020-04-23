@@ -19,7 +19,7 @@
     <application
         android:name=".Data.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_fix_car"
+        android:icon="@mipmap/ic_healthy"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
