@@ -127,28 +127,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             super.onBackPressed()
         }
     }
-//
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.main, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        when (item.itemId) {
-//            R.id.action_settings -> return true
-//            else -> return super.onOptionsItemSelected(item)
-//        }
-//    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_camera -> {
             }
             R.id.nav_gallery -> {
+                // 跳轉 卡路里
                 startActivity(Intent(this,CaloriesActivity::class.java))
 
             }
@@ -170,56 +155,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    fun goTOGooglemap(startLatitude:Double,startLongitude:Double,endLatitude:Double,endLongitude:Double){
-        val startLatitude = startLatitude
-        val startLongitude = startLongitude
-        val endLatitude = endLatitude
-        val endLongitude = endLongitude
 
-        val saddr = "saddr=$startLatitude,$startLongitude"
-        val daddr = "daddr=$endLatitude,$endLongitude"
-        val uriString = "http://maps.google.com/maps?$saddr&$daddr"
-
-        val uri = Uri.parse(uriString)
-
-        val intent = Intent(android.content.Intent.ACTION_VIEW, uri)
-
-        // If you want to get rid of the dialog,
-        // Before the startActivity() add this
-        intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity")
-
-        startActivity(intent)
-    }
-    private val locationListener: LocationListener = object : LocationListener {
-        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
-
-        }
-
-        override fun onProviderEnabled(p0: String?) {
-        }
-
-        override fun onProviderDisabled(p0: String?) {
-        }
-
-        override fun onLocationChanged(location: Location) {
-            lat = location.latitude
-            lon = location.longitude
-
-        }
-
-
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        if (requestCode == MY_PERMISSIONS_REQUEST_LOCATION) {
-
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            } else {
-                Toast.makeText(this@MainActivity, "需要定位功能,才能使用喔", Toast.LENGTH_SHORT).show()
-                return
-            }
-        }
-    }
 
 
 }

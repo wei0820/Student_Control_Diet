@@ -10,9 +10,10 @@ import com.student.student_searchmap.R
 class HomeActivity : AppCompatActivity(){
 
 
-    lateinit var  mButton_1: Button
-    lateinit var  mButton_2: Button
-    lateinit var  mButton_3: Button
+    lateinit var  mButton_1: Button// 建議飲食
+    lateinit var  mButton_2: Button// 體重紀錄
+
+    lateinit var  mButton_3: Button // 睡眠紀錄
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class HomeActivity : AppCompatActivity(){
         mButton_2 = findViewById(R.id.button_2)
         mButton_3 = findViewById(R.id.button_3)
         mButton_1.setOnClickListener {
+            // 跳到建議飲食頁面
 
             startActivity(Intent(this,MainActivity::class.java))
         }
