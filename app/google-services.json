@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "871112994168",
-    "firebase_url": "https://search-245709.firebaseio.com",
-    "project_id": "search-245709",
-    "storage_bucket": "search-245709.appspot.com"
+    "project_number": "114886463138",
+    "firebase_url": "https://healthy-app-c5832.firebaseio.com",
+    "project_id": "healthy-app-c5832",
+    "storage_bucket": "healthy-app-c5832.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:871112994168:android:c7d0e3ce45fdb97d",
+        "mobilesdk_app_id": "1:114886463138:android:0f0319d812cf867d5b51fb",
         "android_client_info": {
-          "package_name": "com.student.student_searchmap"
+          "package_name": "com.student.student_healthy_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "871112994168-94brv9b5rmtt7enonaaonpba2l1ej9uu.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.student.student_searchmap",
-            "certificate_hash": "c90bbfa44aeecb7fea7f934f110ac960d8e389ff"
-          }
-        },
-        {
-          "client_id": "871112994168-b0pe4q32oafku1oomqvnf0cifujppk8i.apps.googleusercontent.com",
+          "client_id": "114886463138-nl8jo01cr1n9t677fm27fv3fkuu5nj66.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDe3V1cP3sVhneQ_Qxqq5QwjP-ynBKZy1E"
+          "current_key": "AIzaSyDROXqxP53x0XcRBpUlgAuQPoSQBtRije0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "871112994168-b0pe4q32oafku1oomqvnf0cifujppk8i.apps.googleusercontent.com",
+              "client_id": "114886463138-nl8jo01cr1n9t677fm27fv3fkuu5nj66.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
