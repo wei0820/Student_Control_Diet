@@ -74,7 +74,6 @@
             android:label="@string/title_activity_my_map" />
         <activity
             android:name=".LandingPageActivity"
-            android:label="@string/title_activity_landing_page"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
