@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.student.student_searchmap.R
 
 class CaloriesActivity : AppCompatActivity() {
@@ -12,6 +14,8 @@ class CaloriesActivity : AppCompatActivity() {
     lateinit var mButton2: Button
     lateinit var mButton3: Button
     lateinit var mButton4: Button
+    lateinit var titleTextView: TextView
+    lateinit var imgView:ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +33,9 @@ class CaloriesActivity : AppCompatActivity() {
 
     }
     fun initLayout(){
+        titleTextView = findViewById(R.id.nametext)
+        imgView = findViewById(R.id.img)
+
         mButton1 = findViewById(R.id.button1)
         mButton2 = findViewById(R.id.button2)
         mButton3 = findViewById(R.id.button3)
@@ -57,7 +64,10 @@ class CaloriesActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 0){
             var name = data?.getStringExtra("name")
-            Log.d("ACETEST", "name: " + name)
+            titleTextView.text = name
+            var img = data?.getIntExtra("img",R.mipmap.ic_healthy)
+            imgView.setImageResource(img!!)
+
         }
     }
 
