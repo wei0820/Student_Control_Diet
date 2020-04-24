@@ -107,15 +107,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
         initLayout()
-        locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
-
-        try {
-            // Request location updates
-            locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
-        } catch (ex: SecurityException) {
-
-
-        }
+   
 
 
     }
