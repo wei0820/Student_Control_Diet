@@ -12,6 +12,7 @@
         android:background="@color/colorPrimary" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_above="@+id/addbutton"
         android:layout_below="@id/toolbar"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -19,9 +20,7 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
         />
 
     <TextView
@@ -32,5 +31,16 @@
         android:text="There is no user with this name."
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/addbutton"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="找不到嗎,點我去新增"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        ></Button>
 
 </RelativeLayout>
