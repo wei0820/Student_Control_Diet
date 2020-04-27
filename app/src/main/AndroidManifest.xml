@@ -38,11 +38,7 @@
         <activity
             android:name="com.student.student_healthy.LandingPageActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.student.student_healthy.HomeActivity"
@@ -60,6 +56,13 @@
             android:label="@string/food_cal"
             android:name="com.student.student_healthy.Main2Activity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.student.student_healthy.GoogleSignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

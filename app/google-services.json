@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "114886463138-946fca1vt1cakb4uhu8ao21ie9tsr7ld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.student.student_healthy_app",
+            "certificate_hash": "a60a39c9dd31f0d7be4d6398b73b18603f3cb906"
+          }
+        },
+        {
           "client_id": "114886463138-nl8jo01cr1n9t677fm27fv3fkuu5nj66.apps.googleusercontent.com",
           "client_type": 3
         }

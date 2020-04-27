@@ -19,11 +19,11 @@
                 android:text="生菜"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -31,11 +31,11 @@
                 android:text="洋蔥"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
         <TextView
 
                 android:layout_width="wrap_content"
@@ -43,11 +43,11 @@
                 android:text="番茄醬"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
     </LinearLayout>
     <LinearLayout
             android:visibility="gone"
@@ -62,11 +62,11 @@
                 android:text="醬油膏"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -74,11 +74,11 @@
                 android:text="泰式酸辣醬"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
         <TextView
 
                 android:layout_width="wrap_content"
@@ -86,11 +86,11 @@
                 android:text="番茄醬"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
     </LinearLayout>
     <LinearLayout
             android:id="@+id/layout3"
@@ -104,11 +104,11 @@
                 android:text="冰塊"
                 android:textSize="28dp"
         ></TextView>
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        ></android.support.v7.widget.SwitchCompat>
+        ></androidx.appcompat.widget.SwitchCompat>
 
     </LinearLayout>
 
