@@ -1,11 +1,11 @@
 package com.student.student_healthy
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Menu
 import android.widget.LinearLayout
-import android.support.v7.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import android.view.View
 import com.student.student_searchmap.R
 import kotlinx.android.synthetic.main.activity_main_2.*
@@ -48,12 +48,10 @@ class Main2Activity : AppCompatActivity() {
 
         //now adding the adapter to recyclerview
         recyclerView.adapter = adapter
-        getData()
+//        getData()
 
-    }
-    fun  getData(){
-        var titleString :String = intent.extras.getString("title")
-        title  = titleString
+        title = "新增飲食紀錄"
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

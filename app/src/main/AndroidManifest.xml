@@ -60,6 +60,9 @@
             android:label="@string/food_cal"
             android:name="com.student.student_healthy.Main2Activity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.student.student_healthy.GoogleSignInActivity">
+
+        </activity>
     </application>
 
 </manifest>
