@@ -48,7 +48,7 @@ class LandingPageActivity : Activity() {
         mRelativeLayout.setOnClickListener {
             //跳到 下一頁
 
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, GoogleSignInActivity::class.java))
         }
     }
     fun changeColor(){

@@ -74,6 +74,7 @@ class GoogleSignInActivity : Activity(), View.OnClickListener {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogle(account!!)
+                startActivity(Intent(this,MainActivity::class.java))
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)
@@ -87,7 +88,6 @@ class GoogleSignInActivity : Activity(), View.OnClickListener {
 
     // [START auth_with_google]
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
-        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.id!!)
         // [START_EXCLUDE silent]
         // [END_EXCLUDE]
 
@@ -146,6 +146,9 @@ class GoogleSignInActivity : Activity(), View.OnClickListener {
 
             signInButton.visibility = View.GONE
             signOutAndDisconnect.visibility = View.VISIBLE
+
+            startActivity(Intent(this,MainActivity::class.java))
+
         } else {
             status.setText(R.string.signed_out)
             detail.text = null

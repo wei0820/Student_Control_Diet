@@ -69,6 +69,7 @@
             tools:visibility="visible">
 
             <Button
+                android:visibility="gone"
                 android:id="@+id/signOutButton"
                 android:layout_marginStart="@dimen/button_horizontal_margin"
                 android:layout_marginEnd="@dimen/button_horizontal_margin"
@@ -79,6 +80,7 @@
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
 
             <Button
+                android:visibility="gone"
                 android:id="@+id/disconnectButton"
                 android:layout_marginStart="@dimen/button_horizontal_margin"
                 android:layout_marginEnd="@dimen/button_horizontal_margin"
