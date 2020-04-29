@@ -1,16 +1,12 @@
 package com.student.student_healthy
 
-
-import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.Activity
-import android.app.TimePickerDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import android.location.Geocoder
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -82,37 +78,11 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
     private val PHOTO = 99
     private val REQUEST_EXTERNAL_STORAGE = 200
     private val PICKER = 100
-    lateinit var bitmap: Bitmap
-    lateinit var phone: DisplayMetrics
     var img: String = ""
-    lateinit var mAddressEdt: EditText
-    lateinit var mCheckBtn: Button
-    lateinit var mSpinner: Spinner
-    lateinit var mStartbtn: Button
-    lateinit var mEndbtn: Button
-    lateinit var mPriceEdt: EditText
-    lateinit var mPhotoButtton: Button
-    lateinit var mPhoneEdt: EditText
-    lateinit var mMessageEdt: EditText
-    lateinit var mSendBtn: Button
-    var latitude  :Double = 0.0
-    var longitude :Double =0.0
-    var mSelectType : String = ""
-    var mType : Int = 0
-
-    var mStartString :String = ""
-    var  mEndString :String = ""
-    var mPhoneString :String = ""
-    var mMessagerString : String = ""
     lateinit var mFirebselibClass: MfiebaselibsClass
-    lateinit var mSpinner2: Spinner
-    val mAppNames = arrayOf(0,1,2,3,4,5,6,7,8,9,10,
-            11,12,13,14,15,16,17,18,19,20,
-            21,22,23,24,25,26,27,28)
-
     var oldFile: File? = null
-    private val filePath: String? = null
     lateinit var mImageView: ImageView
+    lateinit var mOkButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFirebselibClass = MfiebaselibsClass(this, this)
@@ -120,6 +90,10 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         setContentView(R.layout.activity_add_food)
         mUploadPhoto = findViewById(R.id.upload)
         mImageView = findViewById(R.id.img)
+        mOkButton = findViewById(R.id.okbtn)
+        mOkButton.setOnClickListener {
+            
+        }
         mUploadPhoto.setOnClickListener {
             selectPic()
         }
@@ -211,7 +185,6 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
                 }
 
                 override fun onSuccess(file: File) {
-                    Toast.makeText(this@AddFoodActivity,"Size : %s" + getReadableFileSize(file.length()),Toast.LENGTH_SHORT).show()
 
                     img = encode(PhotoManager.getFilePath(file.path.toString()))
                     if(!img.isEmpty()){
@@ -225,26 +198,6 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
                     }
                 }
             })//
-
-//            val cr = contentResolver
-//            try {
-//
-//
-//                //讀取照片，型態為Bitmap
-//                bitmap = BitmapFactory.decodeStream(cr.openInputStream(datauri));
-//                //判斷照片為橫向或者為直向，並進入ScalePic判斷圖片是否要進行縮放
-//                if (bitmap.width > bitmap.height) ScalePic(
-//                        bitmap,
-//                        phone.heightPixels
-//                );
-//                else ScalePic(bitmap, phone.widthPixels);
-//            } catch (ex: FileNotFoundException) {
-//                ex.printStackTrace()
-//
-//            }
-
-//            uploadFromPic(datauri)
-
 
             super.onActivityResult(requestCode, resultCode, data)
         }

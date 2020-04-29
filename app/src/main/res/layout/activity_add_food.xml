@@ -36,12 +36,20 @@
         android:layout_height="wrap_content"
         ></Button>
     <ImageView
+        android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/img"
         ></ImageView>
 
-
+    <Button
+        android:id="@+id/okbtn"
+        android:layout_gravity="center"
+        android:text="確定送出"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></Button>
 
 
 </LinearLayout>
