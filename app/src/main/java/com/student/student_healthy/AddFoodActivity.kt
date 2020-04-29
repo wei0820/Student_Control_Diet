@@ -86,7 +86,7 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
     lateinit var mOkButton: Button
     lateinit var mEditText: EditText
     var addFoodData  = AddFoodData()
-    var mPhotoData: ArrayList<AddFoodData> = ArrayList()
+    var mData: ArrayList<AddFoodData> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,7 +102,11 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
                 addFoodData.setName(mEditText.text.toString())
                 addFoodData.setPhotoUrl(img)
                 Log.d("jack",addFoodData.name)
+                mData.add(addFoodData)
+                MySharedPrefernces.saveFood1Array(this,mData)
                 Toast.makeText(this,"成功",Toast.LENGTH_SHORT).show()
+
+                finish()
             }else{
                 Toast.makeText(this,"失敗",Toast.LENGTH_SHORT).show()
             }
@@ -322,3 +326,4 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         mImageView.setImageBitmap(decodedImage)
     }
 }
+

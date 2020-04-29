@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.student.student_healthy.Data.AddFoodData;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class MySharedPrefernces {
     public  static  final  String KEY_Food1_ARRAY = "food1array";
 
 
-    public static void saveFood1Array(Context context,ArrayList<String> list){
+    public static void saveFood1Array(Context context,ArrayList<AddFoodData> list){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
@@ -71,11 +72,11 @@ public class MySharedPrefernces {
 
     }
 
-    public static ArrayList<String> getFood1Array(Context context){
+    public static ArrayList<AddFoodData> getFood1Array(Context context){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         Gson gson = new Gson();
         String json = prefs.getString(KEY_Food2_ARRAY, null);
-        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        Type type = new TypeToken<ArrayList<AddFoodData>>() {}.getType();
         return gson.fromJson(json, type);
     }
 
