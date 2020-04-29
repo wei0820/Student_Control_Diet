@@ -58,46 +58,89 @@ public class MySharedPrefernces {
         return sp.getString(KEY_PHOTO,"");
     }
 
-    public  static  final  String KEY_SHOP_ARRAY = "shoparray";
+    public  static  final  String KEY_Food1_ARRAY = "food1array";
 
 
-    public static void saveArrayList(Context context,ArrayList<String> list){
+    public static void saveFood1Array(Context context,ArrayList<String> list){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(list);
-        editor.putString(KEY_SHOP_ARRAY, json);
+        editor.putString(KEY_Food2_ARRAY, json);
         editor.apply();
 
     }
 
-    public static ArrayList<String> getArrayList(Context context){
+    public static ArrayList<String> getFood1Array(Context context){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         Gson gson = new Gson();
-        String json = prefs.getString(KEY_SHOP_ARRAY, null);
+        String json = prefs.getString(KEY_Food2_ARRAY, null);
         Type type = new TypeToken<ArrayList<String>>() {}.getType();
         return gson.fromJson(json, type);
     }
 
 
 
-    public  static  final  String KEY_SHOP_PRICE = "shopprice";
+    public  static  final  String KEY_Food2_ARRAY = "food2array";
 
 
-    public static void savePriceArrayList(Context context,ArrayList<String> list){
+    public static void saveFood2Array(Context context,ArrayList<String> list){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(list);
-        editor.putString(KEY_SHOP_PRICE, json);
+        editor.putString(KEY_Food2_ARRAY, json);
         editor.apply();
 
     }
 
-    public static ArrayList<String> getPriceArrayList(Context context){
+    public static ArrayList<String> getFood2Array(Context context){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         Gson gson = new Gson();
-        String json = prefs.getString(KEY_SHOP_PRICE, null);
+        String json = prefs.getString(KEY_Food2_ARRAY, null);
+        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        return gson.fromJson(json, type);
+    }
+
+    public  static  final  String KEY_Food3_ARRAY = "food3array";
+
+
+    public static void saveFood3Array(Context context,ArrayList<String> list){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        editor.putString(KEY_Food3_ARRAY, json);
+        editor.apply();
+
+    }
+
+    public static ArrayList<String> getFood3Array(Context context){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        Gson gson = new Gson();
+        String json = prefs.getString(KEY_Food3_ARRAY, null);
+        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        return gson.fromJson(json, type);
+    }
+
+
+    public  static  final  String KEY_Food4_ARRAY = "food4array";
+
+
+    public static void saveFood4Array(Context context,ArrayList<String> list){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        editor.putString(KEY_Food4_ARRAY, json);
+        editor.apply();
+
+    }
+
+    public static ArrayList<String> getFood4Array(Context context){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        Gson gson = new Gson();
+        String json = prefs.getString(KEY_Food4_ARRAY, null);
         Type type = new TypeToken<ArrayList<String>>() {}.getType();
         return gson.fromJson(json, type);
     }
