@@ -92,7 +92,7 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         mImageView = findViewById(R.id.img)
         mOkButton = findViewById(R.id.okbtn)
         mOkButton.setOnClickListener {
-            
+
         }
         mUploadPhoto.setOnClickListener {
             selectPic()
