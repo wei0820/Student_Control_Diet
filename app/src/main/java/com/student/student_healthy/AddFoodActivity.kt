@@ -86,6 +86,8 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
     lateinit var mOkButton: Button
     lateinit var mEditText: EditText
     var addFoodData  = AddFoodData()
+    var mPhotoData: ArrayList<AddFoodData> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFirebselibClass = MfiebaselibsClass(this, this)
@@ -96,7 +98,14 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         mOkButton = findViewById(R.id.okbtn)
         mEditText = findViewById(R.id.nameedt)
         mOkButton.setOnClickListener {
-            finish()
+            if (!mEditText.text.isEmpty()&&!img.isEmpty()){
+                addFoodData.setName(mEditText.text.toString())
+                addFoodData.setPhotoUrl(img)
+                Log.d("jack",addFoodData.name)
+                Toast.makeText(this,"成功",Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this,"失敗",Toast.LENGTH_SHORT).show()
+            }
 
         }
         mUploadPhoto.setOnClickListener {
@@ -196,6 +205,8 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
                         Toast.makeText(this@AddFoodActivity,"照片取得成功",Toast.LENGTH_SHORT).show()
 
                         decode(img)
+
+                        mOkButton.visibility = View.VISIBLE
 
                     }else{
                         Toast.makeText(this@AddFoodActivity,"照片取得失敗",Toast.LENGTH_SHORT).show()

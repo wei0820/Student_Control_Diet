@@ -44,6 +44,7 @@
         ></ImageView>
 
     <Button
+        android:visibility="gone"
         android:id="@+id/okbtn"
         android:layout_gravity="center"
         android:text="確定送出"
