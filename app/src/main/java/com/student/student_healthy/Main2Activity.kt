@@ -58,6 +58,8 @@ class Main2Activity : AppCompatActivity() {
         mAddButton = findViewById(R.id.addbutton)
         mAddButton.setOnClickListener {
             startActivity(Intent(this,AddFoodActivity::class.java))
+            this.finish()
+
         }
 
     }

@@ -14,7 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a74613e-6abf-4fe9-acd9-821e728468cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,20 +57,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/GoogleSignInActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2394">
-              <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="59" column="47" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
+            <state relative-caret-position="167">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -87,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1197">
-              <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+            <state relative-caret-position="137">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="e#37#994#0" expanded="true" />
               </folding>
@@ -96,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2621">
+            <state relative-caret-position="312">
               <caret line="145" column="5" lean-forward="true" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -111,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/PhotoManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
+            <state relative-caret-position="1914">
               <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -231,11 +223,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/CaloriesActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/PhotoManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_food.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt" />
       </list>
     </option>
   </component>
@@ -716,45 +708,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Downloads/device-2020-04-28-174556.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/GoogleSignInActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="59" column="47" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_food.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="45" column="30" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
-          <folding>
-            <element signature="e#37#994#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/PhotoManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1843">
-          <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,13 +746,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/GoogleSignInActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2621">
+        <state relative-caret-position="312">
           <caret line="145" column="5" lean-forward="true" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/PhotoManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1914">
+          <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="e#37#994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
         </state>
       </provider>
     </entry>
