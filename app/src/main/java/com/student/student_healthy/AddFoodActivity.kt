@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.jackpan.libs.mfirebaselib.MfiebaselibsClass
 import com.jackpan.libs.mfirebaselib.MfirebaeCallback
+import com.student.student_healthy.Data.AddFoodData
 import net.bither.util.CompressTools
 import net.bither.util.FileUtil.getReadableFileSize
 import java.io.File
@@ -83,6 +84,8 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
     var oldFile: File? = null
     lateinit var mImageView: ImageView
     lateinit var mOkButton: Button
+    lateinit var mEditText: EditText
+    var addFoodData  = AddFoodData()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFirebselibClass = MfiebaselibsClass(this, this)
@@ -91,6 +94,7 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         mUploadPhoto = findViewById(R.id.upload)
         mImageView = findViewById(R.id.img)
         mOkButton = findViewById(R.id.okbtn)
+        mEditText = findViewById(R.id.nameedt)
         mOkButton.setOnClickListener {
             finish()
 
