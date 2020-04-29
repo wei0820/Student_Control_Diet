@@ -23,6 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="com.student.student_healthy.AddFoodActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -50,19 +51,15 @@
         <activity
             android:name="com.student.student_healthy.MainActivity"
             android:label="@string/food_title"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.student.student_healthy.CaloriesActivity"
-            android:label="@string/food_cal"/>
-
+            android:label="@string/food_cal" />
         <activity
-            android:label="@string/food_cal"
             android:name="com.student.student_healthy.Main2Activity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name="com.student.student_healthy.GoogleSignInActivity">
-
-        </activity>
+            android:label="@string/food_cal"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name="com.student.student_healthy.GoogleSignInActivity"></activity>
     </application>
 
 </manifest>

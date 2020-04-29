@@ -22,7 +22,6 @@ class CaloriesActivity : AppCompatActivity() {
 
     lateinit var mNoDateLayout:RelativeLayout
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calories)
@@ -68,6 +67,18 @@ class CaloriesActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (MySharedPrefernces.getFood1Array(this)!=null&&
+                MySharedPrefernces.getFood1Array(this).size!=0){
+            MySharedPrefernces.getFood1Array(this).forEach {
+                Log.d("Jack",it.name)
+                Log.d("Jack",it.photoUrl)
+
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

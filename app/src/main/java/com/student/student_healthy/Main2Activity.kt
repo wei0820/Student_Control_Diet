@@ -1,5 +1,6 @@
 package com.student.student_healthy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import android.view.Menu
 import android.widget.LinearLayout
 import androidx.appcompat.widget.SearchView
 import android.view.View
+import android.widget.Button
 import com.student.student_searchmap.R
 import kotlinx.android.synthetic.main.activity_main_2.*
 
@@ -31,6 +33,8 @@ class Main2Activity : AppCompatActivity() {
             R.mipmap.photo11,R.mipmap.photo12,R.mipmap.photo13,R.mipmap.photo14,R.mipmap.photo15,
             R.mipmap.photo16,R.mipmap.photo17,R.mipmap.photo18,R.mipmap.photo19,R.mipmap.photo20)
 
+    lateinit var mAddButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_2)
@@ -51,6 +55,12 @@ class Main2Activity : AppCompatActivity() {
 //        getData()
 
         title = "新增飲食紀錄"
+        mAddButton = findViewById(R.id.addbutton)
+        mAddButton.setOnClickListener {
+            startActivity(Intent(this,AddFoodActivity::class.java))
+            this.finish()
+
+        }
 
     }
 
