@@ -74,9 +74,7 @@ class CaloriesActivity : AppCompatActivity() {
         if (MySharedPrefernces.getFood1Array(this)!=null&&
                 MySharedPrefernces.getFood1Array(this).size!=0){
             MySharedPrefernces.getFood1Array(this).forEach {
-                Log.d("Jack",it.name)
-                Log.d("Jack",it.photoUrl)
-
+               
             }
         }
     }
