@@ -67,7 +67,7 @@ public class MySharedPrefernces {
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(list);
-        editor.putString(KEY_Food2_ARRAY, json);
+        editor.putString(KEY_Food1_ARRAY, json);
         editor.apply();
 
     }
@@ -75,7 +75,7 @@ public class MySharedPrefernces {
     public static ArrayList<AddFoodData> getFood1Array(Context context){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         Gson gson = new Gson();
-        String json = prefs.getString(KEY_Food2_ARRAY, null);
+        String json = prefs.getString(KEY_Food1_ARRAY, null);
         Type type = new TypeToken<ArrayList<AddFoodData>>() {}.getType();
         return gson.fromJson(json, type);
     }
