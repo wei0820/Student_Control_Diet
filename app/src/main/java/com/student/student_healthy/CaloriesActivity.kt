@@ -210,6 +210,7 @@ class CaloriesActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 0){
             if(data==null){
+                Log.d("Jack","is null")
                 return
             }
 
@@ -229,6 +230,8 @@ class CaloriesActivity : AppCompatActivity() {
 
 
                     } else {
+                        mData.add(addFoodData)
+
                         MySharedPrefernces.saveFood1Array(this, mData)
                         mData.clear()
 
@@ -244,6 +247,8 @@ class CaloriesActivity : AppCompatActivity() {
 
 
                     }else{
+                        mData.add(addFoodData)
+
                         MySharedPrefernces.saveFood2Array(this,mData)
                         mData.clear()
 
@@ -274,6 +279,8 @@ class CaloriesActivity : AppCompatActivity() {
 
 
                     }else{
+                        mData.add(addFoodData)
+
                         MySharedPrefernces.saveFood4Array(this,mData)
                         mData.clear()
 
