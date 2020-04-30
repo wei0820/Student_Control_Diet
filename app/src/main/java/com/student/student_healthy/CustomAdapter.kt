@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.student.student_searchmap.R
 
-class CustomAdapter(val userList: ArrayList<User>,var activity:Activity) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(val userList: ArrayList<User>,var activity:Activity,var type :Int) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,7 +21,7 @@ class CustomAdapter(val userList: ArrayList<User>,var activity:Activity) : Recyc
 
     //this method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(userList[position],activity)
+        holder.bindItems(userList[position],activity,type)
     }
 
     //this method is giving the size of the list
@@ -32,14 +32,15 @@ class CustomAdapter(val userList: ArrayList<User>,var activity:Activity) : Recyc
     //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(user: User,activity: Activity) {
+        fun bindItems(user: User,activity: Activity,type: Int) {
             val textViewName = itemView.findViewById(R.id.textViewUsername) as TextView
             val textViewAge  = itemView.findViewById(R.id.textViewAge) as ImageView
             textViewName.text = user.name
             textViewAge.setImageResource(user.age)
             itemView.setOnClickListener({
                 Toast.makeText(itemView.context, "您選擇了:"+user.name, Toast.LENGTH_SHORT).show()
-                    var intent = Intent()
+                var intent = Intent()
+                intent.putExtra("type",type)
                 intent.putExtra("name", user.name)
                 intent.putExtra("img", user.age)
                 activity.setResult(Activity.RESULT_OK, intent)

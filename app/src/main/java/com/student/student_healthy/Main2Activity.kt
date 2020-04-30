@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.widget.SearchView
 import android.view.View
 import android.widget.Button
+import com.student.student_healthy.Data.AddFoodData
 import com.student.student_searchmap.R
 import kotlinx.android.synthetic.main.activity_main_2.*
 
@@ -22,10 +23,8 @@ class Main2Activity : AppCompatActivity() {
     val filteredUsers = ArrayList<User>()
 
     //creating our adapter
-    val adapter = CustomAdapter(users,this)
 
     //creating our adapter
-    val filteredAdapter = CustomAdapter(filteredUsers,this)
     var name = arrayOf("白飯", "英式紅茶", "酪梨", "紅心芭樂", "米粉", "英式紅茶拿鐵", "小農鮮奶咖啡", "小農雪點鮮奶茶", "芭樂", "四季翠玉青茶",
                 "黑糖雪點奶茶", "小農經典拿鐵", "百香果", "奇異果", "柳橙", "芒果綠茶", "泡麵", "莊園拿鐵咖啡", "粥", "葡萄柚綠茶")
     var photo = arrayOf(R.mipmap.photo1, R.mipmap.photo2, R.mipmap.photo3, R.mipmap.photo4, R.mipmap.photo5,
@@ -35,6 +34,10 @@ class Main2Activity : AppCompatActivity() {
 
     lateinit var mAddButton: Button
     var typeInt :Int = 0
+    var addFoodData  = AddFoodData()
+    var mData: ArrayList<AddFoodData> = ArrayList()
+    var adapter = CustomAdapter(users,this,typeInt)
+    var filteredAdapter = CustomAdapter(filteredUsers,this,typeInt)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +79,9 @@ class Main2Activity : AppCompatActivity() {
     }
     fun getData(){
         typeInt =  intent.getStringExtra("type").toInt()
+        adapter = CustomAdapter(users,this,typeInt)
+        filteredAdapter = CustomAdapter(filteredUsers,this,typeInt)
+
 
     }
 
