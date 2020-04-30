@@ -34,13 +34,14 @@ class Main2Activity : AppCompatActivity() {
             R.mipmap.photo16,R.mipmap.photo17,R.mipmap.photo18,R.mipmap.photo19,R.mipmap.photo20)
 
     lateinit var mAddButton: Button
+    var typeInt :Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_2)
 
         setSupportActionBar(toolbar)
-
+        getData()
         //adding a layoutmanager
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         for (i in name.indices) {
@@ -52,15 +53,29 @@ class Main2Activity : AppCompatActivity() {
 
         //now adding the adapter to recyclerview
         recyclerView.adapter = adapter
-//        getData()
 
         title = "新增飲食紀錄"
         mAddButton = findViewById(R.id.addbutton)
         mAddButton.setOnClickListener {
-            startActivity(Intent(this,AddFoodActivity::class.java))
-            this.finish()
+          setType()
 
         }
+
+
+    }
+    fun setType(){
+
+
+        var intent  =  Intent()
+        var bundle  = Bundle()
+        bundle.putInt("type",typeInt)
+        intent.putExtras(bundle)
+        intent.setClass(this,AddFoodActivity::class.java)
+        startActivity(intent)
+        this.finish()
+    }
+    fun getData(){
+        typeInt =  intent.getStringExtra("type").toInt()
 
     }
 
