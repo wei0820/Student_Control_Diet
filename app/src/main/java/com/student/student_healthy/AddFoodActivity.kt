@@ -93,6 +93,8 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         mFirebselibClass = MfiebaselibsClass(this, this)
 
         setContentView(R.layout.activity_add_food)
+
+        getType()
         mUploadPhoto = findViewById(R.id.upload)
         mImageView = findViewById(R.id.img)
         mOkButton = findViewById(R.id.okbtn)
@@ -101,10 +103,68 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
             if (!mEditText.text.isEmpty()&&!img.isEmpty()){
                 addFoodData.setName(mEditText.text.toString())
                 addFoodData.setPhotoUrl(img)
-                Log.d("jack",addFoodData.name)
                 mData.add(addFoodData)
-                MySharedPrefernces.saveFood1Array(this,mData)
+
                 Toast.makeText(this,"成功",Toast.LENGTH_SHORT).show()
+                when ( intent.getIntExtra("type",-1)) {
+                    0 ->
+                        if (MySharedPrefernces.getFood1Array(this) != null &&
+                                MySharedPrefernces.getFood1Array(this).size != 0) {
+                            mData = MySharedPrefernces.getFood1Array(this)
+                            mData.add(addFoodData)
+                            MySharedPrefernces.saveFood1Array(this, mData)
+                            mData.clear()
+
+
+                        } else {
+                            MySharedPrefernces.saveFood1Array(this, mData)
+                            mData.clear()
+
+                        }
+
+                    1 ->
+                        if (MySharedPrefernces.getFood2Array(this)!=null &&
+                                MySharedPrefernces.getFood2Array(this).size!=0){
+                            mData = MySharedPrefernces.getFood2Array(this)
+                            mData.add(addFoodData)
+                            MySharedPrefernces.saveFood2Array(this,mData)
+                            mData.clear()
+
+
+                        }else{
+                            MySharedPrefernces.saveFood2Array(this,mData)
+                            mData.clear()
+
+                        }
+                    2 ->
+                        if (MySharedPrefernces.getFood3Array(this)!=null &&
+                                MySharedPrefernces.getFood3Array(this).size!=0){
+                            mData = MySharedPrefernces.getFood3Array(this)
+                            mData.add(addFoodData)
+                            MySharedPrefernces.saveFood3Array(this,mData)
+                            mData.clear()
+
+
+                        }else{
+                            MySharedPrefernces.saveFood3Array(this,mData)
+                            mData.clear()
+
+                        }
+                    3 ->
+                        if (MySharedPrefernces.getFood4Array(this)!=null &&
+                                MySharedPrefernces.getFood4Array(this).size!=0){
+                            mData = MySharedPrefernces.getFood4Array(this)
+                            mData.add(addFoodData)
+                            MySharedPrefernces.saveFood4Array(this,mData)
+                            mData.clear()
+
+
+                        }else{
+                            MySharedPrefernces.saveFood4Array(this,mData)
+                            mData.clear()
+
+                        }
+                }
 
                 finish()
             }else{
@@ -117,6 +177,13 @@ class AddFoodActivity : AppCompatActivity() , View.OnClickListener, MfirebaeCall
         }
 
     }
+    fun getType(){
+         intent.getIntExtra("type",-1)
+        Log.d("type",intent.getIntExtra("type",-1).toString())
+
+    }
+
+
     private fun selectPic() {
         val permission = ActivityCompat.checkSelfPermission(
                 this,
