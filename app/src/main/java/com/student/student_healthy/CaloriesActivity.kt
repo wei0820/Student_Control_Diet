@@ -5,9 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
+import com.student.student_healthy.Data.AddFoodData
 import com.student.student_searchmap.R
+import kotlinx.android.synthetic.main.activity_calories.*
 
 class CaloriesActivity : AppCompatActivity() {
     lateinit var mButton1: Button
@@ -19,6 +23,9 @@ class CaloriesActivity : AppCompatActivity() {
 
     lateinit var mNoDateLayout:RelativeLayout
     var type :Int = 0
+    var mAdapter: MyAdapter? = null
+    lateinit var mListView: ListView
+    var mArray = ArrayList<AddFoodData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +36,7 @@ class CaloriesActivity : AppCompatActivity() {
     fun initLayout(){
         mHaveDateLayout = findViewById(R.id.havelayout)
         mNoDateLayout = findViewById(R.id.nodatelayout)
-
+        mListView = findViewById(R.id.listview)
         mAddButton = findViewById(R.id.addbutton)
         mButton1 = findViewById(R.id.button1)
         mButton2 = findViewById(R.id.button2)
@@ -101,6 +108,13 @@ class CaloriesActivity : AppCompatActivity() {
             0 ->
                 if (MySharedPrefernces.getFood1Array(this)!=null&&
                         MySharedPrefernces.getFood1Array(this).size!=0){
+                    mArray.clear()
+                    mArray = MySharedPrefernces.getFood1Array(this)
+                    mAdapter = MyAdapter(mArray)
+                    mListView.setAdapter(mAdapter)
+
+                    mAdapter!!.notifyDataSetChanged()
+
                     MySharedPrefernces.getFood1Array(this).forEach {
                         Log.d("Jack",it.name)
                         mNoDateLayout.visibility = View.GONE
@@ -115,6 +129,14 @@ class CaloriesActivity : AppCompatActivity() {
             1->
                 if (MySharedPrefernces.getFood2Array(this)!=null&&
                         MySharedPrefernces.getFood2Array(this).size!=0){
+                    mArray.clear()
+
+                    mArray = MySharedPrefernces.getFood2Array(this)
+                    mAdapter = MyAdapter(mArray)
+                    mListView.setAdapter(mAdapter)
+
+                    mAdapter!!.notifyDataSetChanged()
+
                     MySharedPrefernces.getFood2Array(this).forEach {
                         Log.d("Jack",it.name)
                         mNoDateLayout.visibility = View.GONE
@@ -128,6 +150,12 @@ class CaloriesActivity : AppCompatActivity() {
             2->
                 if (MySharedPrefernces.getFood3Array(this)!=null&&
                         MySharedPrefernces.getFood3Array(this).size!=0){
+                    mArray = MySharedPrefernces.getFood3Array(this)
+                    mAdapter = MyAdapter(mArray)
+                    mListView.setAdapter(mAdapter)
+
+                    mAdapter!!.notifyDataSetChanged()
+
                     MySharedPrefernces.getFood3Array(this).forEach {
                         Log.d("Jack",it.name)
                         mNoDateLayout.visibility = View.GONE
@@ -142,6 +170,14 @@ class CaloriesActivity : AppCompatActivity() {
             3 ->
                 if (MySharedPrefernces.getFood4Array(this)!=null&&
                         MySharedPrefernces.getFood4Array(this).size!=0){
+                    mArray.clear()
+
+                    mArray = MySharedPrefernces.getFood4Array(this)
+                    mListView.setAdapter(mAdapter)
+
+                    mAdapter!!.notifyDataSetChanged()
+
+
                     MySharedPrefernces.getFood4Array(this).forEach {
                         Log.d("Jack",it.name)
                         mNoDateLayout.visibility = View.GONE
@@ -163,5 +199,46 @@ class CaloriesActivity : AppCompatActivity() {
 
         }
     }
+    inner class MyAdapter(var mAllData: ArrayList<AddFoodData>?) : BaseAdapter() {
+        fun updateData(datas: ArrayList<AddFoodData>) {
+            mAllData = datas
+            notifyDataSetChanged()
+        }
 
+        override fun getCount(): Int {
+            return mAllData!!.size
+        }
+
+        override fun getItem(position: Int): Any {
+            return mAllData!![position]
+        }
+
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
+        }
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            var convertView = convertView
+            val data = mAllData!![position]
+            if (convertView == null)
+                convertView = LayoutInflater.from(this@CaloriesActivity).inflate(
+                        R.layout.listview_layout, null)
+            var mTittleText : TextView = convertView!!.findViewById(R.id.listviewtext)
+            var photoimg : ImageView = convertView!!.findViewById(R.id.listview_img)
+            mTittleText.setText(data.name)
+//            photoimg.setOnClickListener {
+//                mArray.removeAt(position)
+//                mprice.removeAt(position)
+//                MySharedPrefernces.saveArrayList(this@mShopCarActivity, mArray)
+//                MySharedPrefernces.savePriceArrayList(this@mShopCarActivity, mprice)
+//                getPrice()
+//
+//
+//            }
+
+
+            return convertView
+        }
+
+    }
 }

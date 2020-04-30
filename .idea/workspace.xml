@@ -16,7 +16,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a74613e-6abf-4fe9-acd9-821e728468cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/CaloriesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/CaloriesActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,8 +123,28 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/CaloriesActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="147" column="65" selection-start-line="147" selection-start-column="65" selection-end-line="147" selection-end-column="65" />
+            <state relative-caret-position="584">
+              <caret line="135" selection-start-line="135" selection-end-line="135" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -133,25 +154,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
               <caret line="119" column="33" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/a1f19cf524d57ed93146180a2d119f93/jars/classes.jar!/com/google/android/gms/common/api/ApiException.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_google.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1558">
-              <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -204,7 +206,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_news.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fast_add.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
@@ -231,13 +232,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_google.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/GoogleSignInActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/PhotoManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Data/AddFoodData.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_food.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/MySharedPrefernces.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/CaloriesActivity.kt" />
       </list>
     </option>
@@ -534,14 +536,6 @@
         <state relative-caret-position="-4439" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Downloads/device-2020-04-23-143704.png" />
     <entry file="file://$PROJECT_DIR$/../Downloads/device-2020-04-23-143752.png" />
     <entry file="file://$PROJECT_DIR$/../Downloads/device-2020-04-23-143738.png" />
@@ -725,14 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Downloads/device-2020-04-28-174556.png" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/GoogleSignInActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -796,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/AddFoodActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -820,10 +799,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/Main2Activity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calories.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/student/student_healthy/CaloriesActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="147" column="65" selection-start-line="147" selection-start-column="65" selection-end-line="147" selection-end-column="65" />
+        <state relative-caret-position="584">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
         </state>
       </provider>
     </entry>

@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/havelayout"
         android:layout_above="@+id/bottomlayout"
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/nodatelayout"
         android:layout_above="@+id/bottomlayout"
         android:layout_width="match_parent"
